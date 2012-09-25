@@ -3,22 +3,21 @@
 
 site 'http://community.opscode.com/api/v1'
 
-# Core stuff
+# Core
 cookbook 'apt'
 cookbook 'build-essential'
 
-# Setup a ruby environment
+# Ruby
 cookbook 'ruby_build'
 cookbook 'rbenv', :git => 'git://github.com/fnichol/chef-rbenv', :ref => 'v0.6.4'
 
-# Database business
+# Database
 cookbook 'mysql'
-cookbook 'initdb', :git => 'git://github.com/xforty/chef-initdb.git'
 
-# Rails server
+# Rails Server
 cookbook 'nginx'
 cookbook 'unicorn'
 cookbook 'runit'
 
-# Glue it all together
+# Glue / Init
 cookbook 'rails-lastmile', :git => 'git://github.com/alexbain/rails-lastmile.git'

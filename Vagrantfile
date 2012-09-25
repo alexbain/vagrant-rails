@@ -23,7 +23,6 @@ Vagrant::Config.run do |config|
 
     chef.add_recipe "mysql::server"
     chef.add_recipe "mysql::ruby"
-    chef.add_recipe "initdb"
 
     chef.add_recipe "rails-lastmile"
 
@@ -31,37 +30,9 @@ Vagrant::Config.run do |config|
       :build_essential => {
         :compiletime => true
       },
-      :rvm => {
-        :default_ruby => 'ruby-1.9.2-p290',
-        :gem_package => {
-          'rvm_string' => 'ruby-1.9.2-p290'
-        }
-      },
       :mysql => {
         :server_root_password => 'root',
         :bind_address => '127.0.0.1'
-      },
-      :initdb => {
-        :mysql => {
-          :connection => {
-            :username => "root",
-            :password => "root",
-            :host     => "localhost"
-          },
-          :databases => {
-            "rails" => {
-              :action => :create
-            }
-          },
-          :users => {
-            "dbuser" => {
-              :action        => :grant,
-              :database_name => "rails",
-              :host          => "localhost",
-              :password      => "password"
-            }
-          }
-        }
       }
     )
   end
