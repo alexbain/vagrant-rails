@@ -9,7 +9,7 @@ cookbook 'build-essential'
 
 # Setup a ruby environment
 cookbook 'ruby_build'
-cookbook 'rbenv', :git => 'https://github.com/fnichol/chef-rbenv', :ref => 'v0.6.4'
+cookbook 'rbenv', :git => 'git://github.com/fnichol/chef-rbenv', :ref => 'v0.6.4'
 
 # Database business
 cookbook 'mysql'
@@ -21,4 +21,4 @@ cookbook 'unicorn'
 cookbook 'runit'
 
 # Glue it all together
-cookbook 'rails-lastmile', :git => 'git://github.com/DanThiffault/rails-lastmile.git'
+cookbook 'rails-lastmile', :git => 'git://github.com/alexbain/rails-lastmile.git'
